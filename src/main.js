@@ -1,5 +1,11 @@
-import { WEATHER_API_KEY } from "./config";
-const API_KEY = WEATHER_API_KEY;
+let API_KEY;
+try {
+  const config = await import('./config');
+  API_KEY =config.WEATHER_API_KEY;
+} catch (e) {
+  API_KEY = import.meta.env.VITE_WEATHER_API_KEY || '';
+}
+
 const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 // DOM Elements
