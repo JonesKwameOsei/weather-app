@@ -1,0 +1,398 @@
+/* Import font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+/* Modern CSS Style */
+.modern-theme {
+  background: linear-gradient(135deg, #00d2d3, #2e86de);
+  color: var(--secondary-text-color);
+}
+
+.modern-theme .header {
+  background: transparent;
+  box-shadow: none;
+}
+
+.modern-theme .weather-display {
+  background: var(--modern-theme-light);
+  backdrop-filter: blur(10px);
+  color: var(--secondary-text-color);
+  border: 1px solid var(--bg-border);
+}
+
+.modern-theme .detail-item {
+  background: var(--modern-theme-light);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin: 0.5rem;
+  min-width: 120px;
+}
+
+.modern-theme .detail-icon {
+  color: var(--secondary-text-color);
+}
+
+.modern-theme .footer {
+  background: transparent;
+}
+
+.modern-theme input[type="text"],
+.modern-theme button[type="submit"] {
+  background: var(--bg-border);
+  border: 1px solid var(--modern-theme-bg);
+  color: var(--secondary-text-color);
+}
+
+.modern-theme input[type="text"]::placeholder {
+  color: rgba(255 255 255 / 70%);
+}
+
+.modern-theme button[type="submit"]:hover {
+  background: var(--modern-theme-bg);
+}
+
+/* Base Styles and CSS RESET */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2980b9;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --secondary-text-color: #fff;
+  --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 10px rgba(0 0 0 / 10%);
+  --modern-theme-bg: rgba(255 255 255 / 30%);
+  --modern-theme-light: rgba(255 255 255 / 10%)
+  --bg-border: rgba(255 255 255 / 20%);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: Poppins, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Add emoji to header */
+h1::after {
+  content: '🌦️';
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+/* Layout Components */
+.header {
+  background-color: var(--primary-color);
+  color: var(--secondary-text-color);
+  padding: 1.5rem 1rem;
+  box-sizing: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--secondary-text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg);
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  max-width: 800px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-text-color);
+  padding: 1rem;
+  margin-top: auto;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.footer a {
+  color: var(--secondary-text-color);
+  text-decoration: underline;
+}
+
+/* Form Styles */
+.search-section {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Styles */
+.input-container {
+  display: flex;
+  width: 100%;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Button Styles */
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: var(--secondary-text-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+button[type="submit"]:focus,
+button[type="submit"]:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button[type="submit"]:active {
+  transform: translateY(2px);
+}
+
+/* Weather Display Styles */
+.weather-display {
+  background-color: var(--secondary-text-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  display: none;
+  width: 100%;
+}
+
+.weather-display.active {
+  display: block;
+}
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.custom-weather-icon {
+  margin: 0.5rem 0;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-weather-icon .fa-4x {
+  font-size: 3.5rem !important;
+}
+
+/* Temperature Styles */
+.temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* Description Styles */
+.description {
+  font-size: 1.5rem;
+  text-decoration: capitalize;
+  margin-bottom: 1rem;
+}
+
+/* Details */
+.details {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  min-width: 100px;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--primary-color);
+}
+
+.detail-label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Error Display Styles */
+.error-container {
+  background-color: var(--error-color);
+  color: var(--secondary-text-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Accessibility */
+.sr-only {
+  position : absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Media Queries: Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .details {
+    flex-direction: column;
+  }
+
+  .detail-item {
+    margin: 0.5rem 0;
+  }
+} 
+
+/* On smaller screens */
+@media (max-width: 445px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .main-container {
+    margin: 1rem auto;
+  }
+
+  .search-section {
+    margin-bottom: 1rem;
+  }
+
+  .weather-display {
+    padding: 1.5rem;
+  }
+
+  .weather-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .custom-weather-icon {
+    height: 80px;
+  }
+
+  .custom-weather-icon .fa-solid {
+    font-size: 3em !important;
+  }
+
+  .temperature {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .detail-icon {
+    font-size: 1.2rem;
+  }
+}
+
+/* On more smaller screens */
+@media (max-width: 403px) {
+  .input-container {
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    height: 45px;
+    border-radius: var(--border-radius);
+  }
+
+  .weather-display.active + .search-section {
+    margin-top: 1rem;
+  }
+}

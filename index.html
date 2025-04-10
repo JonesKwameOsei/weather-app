@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Check current weather conditions in cities around the world">
+    <meta name="author" content="Jones Osei">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1>Weather Forecast</h1>
+      <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+        <i class="fa-solid fa-adjust"></i>
+      </button>
+    </header>
+
+    <main class="main-container">
+      <section class="search-section">
+        <form aria-label="Search for a city" id="weather-form" class="form-group">
+          <div class="input-container">
+            <input 
+            type="text"
+            id="city-input"
+            placeholder="Enter city name"
+            aria-required="true"
+            required
+          >
+          <button type="submit" aria-label="Search">
+            <i class="fa-solid fa-search" aria-hidden="true"></i>
+            <span class="sr-only">Search</span>
+          </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="weather-display" aria-live="polite">
+        <!-- Weather data will be displayed here -->
+      </section>
+
+      <section class="error-container" aria-live="assertive" hidden>
+        <!-- Error messages will be displayed here -->
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Weather data provided by 
+        <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap
+        </a>
+      </p>
+      <p>Created by Jones Osei</p>
+      <p>
+        &copy; 2025 Weather Forecast App. All rights reserved.
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
