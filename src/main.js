@@ -68,24 +68,14 @@ async function getWeatherData(city) {
 		url.searchParams.append('units', 'metric');
 
 		// Fetch weather data from the API
-		const response = await fetch(url, {
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		});
+		const response = await fetch(url);
 
 		// Handle the response status
 		if (!response.ok) {
-			const errorText = await response.text();
-			console.error('API Error Response:', errorText);
-
 			if (response.status === 404) {
 				throw new Error(
 					'City not found. Please check the spelling and try again.'
 				);
-			} else if (response.status === 401) {
-				throw new Error('Please try again later.');
 			} else {
 				throw new Error(
 					'Failed to access the weather data. Please try again later.'
